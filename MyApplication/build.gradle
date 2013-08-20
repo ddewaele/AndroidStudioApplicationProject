@@ -1,6 +1,7 @@
 buildscript {
     repositories {
         mavenCentral()
+        maven {url 'http://foursquare-api-java.googlecode.com/svn/repository'}
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:0.5.+'
@@ -10,6 +11,7 @@ apply plugin: 'android'
 
 repositories {
     mavenCentral()
+    maven {url 'http://foursquare-api-java.googlecode.com/svn/repository'}
 }
 
 android {
@@ -17,7 +19,7 @@ android {
     buildToolsVersion "17.0.0"
 
     defaultConfig {
-        minSdkVersion 7
+        minSdkVersion 8
         targetSdkVersion 17
     }
 }
@@ -25,5 +27,9 @@ android {
 dependencies {
     compile 'com.android.support:support-v4:18.0.0'
     compile 'com.google.android.gms:play-services:3.1.36'
+    compile 'com.google.oauth-client:google-oauth-client:1.16.0-rc'
+    compile 'com.google.http-client:google-http-client-jackson2:1.16.0-rc'
+    compile 'com.android.support:appcompat-v7:18.0.+'
+    compile files('libs/foursquare-api-1.0.2.jar')
 
 }
